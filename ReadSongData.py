@@ -28,3 +28,4 @@ def compare_songs(s1, s2):
 
     return (key_dist / 11 + tempo_dist / 141.873 + energy_dist / .851)
 
+print(compare_songs(data[0],data[1]))

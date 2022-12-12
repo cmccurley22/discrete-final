@@ -58,3 +58,5 @@ for o in range(5):
 # write song data to json file
 with open("data.json", "w") as outfile:
     json.dump(song_data, outfile)
+
+print(type(song_data))
