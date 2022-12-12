@@ -13,23 +13,16 @@ client_cred_manager = SpotifyClientCredentials(client_id = cid, \
 
 sp = spotipy.Spotify(client_credentials_manager = client_cred_manager)
 
+# URL to playlist - can be replaced with any playlist
+# currently using the top 500 songs of 2022
 playlist_url = "https://open.spotify.com/playlist/64QxysD2w5x5EMLgcoT7fa"
 uri = playlist_url.split("/")[-1].split("?")[0]
-
-'''song_data = {
-    "name": [],
-    "artist": [],
-    "URI": [],
-    "tempo": [],
-    "genre": [],
-    "energy": [],
-    "key": []
-}'''
 
 song_data = []
 
 i = 0
 
+# can only pull 100 songs at once, so loop through 5 times
 for o in range(5):
     for track in sp.playlist_tracks(uri, limit = 100, offset = o * 100)["items"]:
         song = {}
@@ -62,5 +55,6 @@ for o in range(5):
         print(i)
         i += 1
 
-with open("test.json", "w") as outfile:
+# write song data to json file
+with open("data.json", "w") as outfile:
     json.dump(song_data, outfile)
