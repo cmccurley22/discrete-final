@@ -1,7 +1,7 @@
 import json
 
 # read json file of data
-with open("data.json") as f:
+with open("data2.json") as f:
     data = json.load(f)
 
 
@@ -19,13 +19,18 @@ def compare_songs(s1, s2):
             values (out of 1) of the three factors we're considering
 
     '''
+
     key_dist = abs(s1["key"] - s2["key"])
     tempo_dist = abs(s1["tempo"] - s2["tempo"])
     energy_dist = abs(s1["energy"] - s2["energy"])
+    dance_dist = abs(s1["danceability"] - s2["danceability"])
+    live_dist = abs(s1["liveness"] - s2["liveness"])
+    acoustic_dist = abs(s1["acousticness"] - s2["acousticness"])
+
 
     all_genres = s1["genre"] + s2["genre"]
     common_genres = len(all_genres) - len(set(all_genres))
 
-    return (key_dist / 11 + tempo_dist / 141.873 + energy_dist / .851)
-
-print(compare_songs(data[0],data[1]))
+    val = (key_dist / 22 + tempo_dist / 141.873 + energy_dist / .851 \
+        + dance_dist / .76 + live_dist / .8922 + acoustic_dist / .955)
+    return val / common_genres if common_genres > 0 else val

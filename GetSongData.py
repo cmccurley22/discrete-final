@@ -49,6 +49,9 @@ for o in range(5):
         song["tempo"] = (features["tempo"])
         song["energy"] = (features["energy"])
         song["key"] = (features["key"])
+        song["danceability"] = (features["danceability"])
+        song["liveness"] = (features["liveness"])
+        song["acousticness"] = (features["acousticness"])
 
         song_data.append(song)
 
@@ -56,7 +59,5 @@ for o in range(5):
         i += 1
 
 # write song data to json file
-with open("data.json", "w") as outfile:
+with open("data2.json", "w") as outfile:
     json.dump(song_data, outfile)
-
-print(type(song_data))
