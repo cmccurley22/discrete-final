@@ -2,7 +2,10 @@ from itertools import combinations
 import networkx as nx
 from Node import Node
 import sys
+import json
 
+with open("artists.json") as f:
+    artists = json.load(f)
 
 class SongGraph:
     def __init__(self):
@@ -91,4 +94,6 @@ class SongGraph:
       
       # Prints the final shortest path
       for song in shortest_path:
-        print(song)
+        for artist in artists:
+          if song in artist:
+            print(song + " by " + artist[song])
