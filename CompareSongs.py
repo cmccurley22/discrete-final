@@ -27,6 +27,18 @@ def compare_songs(s1, s2):
     live_dist = abs(s1["liveness"] - s2["liveness"])
     acoustic_dist = abs(s1["acousticness"] - s2["acousticness"])
 
+    '''print("Song 1")
+    print("Key: " + str(s1["key"]))
+    print("Tempo: " + str(s1["tempo"]))
+    print("Energy: " + str(s1["energy"]))
+    print("Artist Genres: " + str(s1["genre"]))
+
+    print("Song 2")
+    print("Key: " + str(s2["key"]))
+    print("Tempo: " + str(s2["tempo"]))
+    print("Energy: " + str(s2["energy"]))
+    print("Artist Genres: " + str(s2["genre"]))'''
+
 
     all_genres = s1["genre"] + s2["genre"]
     common_genres = len(all_genres) - len(set(all_genres))
@@ -34,3 +46,4 @@ def compare_songs(s1, s2):
     val = (key_dist / 22 + tempo_dist / 141.873 + energy_dist / .851 \
         + dance_dist / .76 + live_dist / .8922 + acoustic_dist / .955)
     return val / common_genres if common_genres > 0 else val
+
