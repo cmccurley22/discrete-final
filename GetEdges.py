@@ -2,11 +2,11 @@
 Create a json file of all of the edges in our song graph
 """""
 
-from ReadSongData import compare_songs
+from CompareSongs import compare_songs
 import json
 
 # Read json file of data
-with open("data.json") as f:
+with open("data2.json") as f:
     data = json.load(f)
 
 edges_data = []
