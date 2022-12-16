@@ -1,3 +1,7 @@
+'''
+Generate plots of song data for presentation
+'''
+
 import json
 import matplotlib.pyplot as plt
 

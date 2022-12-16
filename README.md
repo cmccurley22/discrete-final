@@ -1,0 +1,1 @@
+This repository contains the code for our 2022 Discrete Math final project

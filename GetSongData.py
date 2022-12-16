@@ -1,3 +1,8 @@
+'''
+Pull data from Spotify's API on a playlist (currently Top 500 of 2022) then
+write data into a JSON file for future use
+'''
+
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 import json
