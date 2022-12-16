@@ -5,9 +5,9 @@ This repository contains the code for our 2022 Discrete Math final project, whic
 
 ## Dependencies
 <ul>
-<li>[json](https://docs.python.org/3/library/json.html)</li>
-<li>[matplotlib](https://matplotlib.org/)</li>
-<li>[spotipy](https://spotipy.readthedocs.io/en/2.22.0/)</li>
+<li> [json](https://docs.python.org/3/library/json.html)</li>
+<li> [matplotlib](https://matplotlib.org/)</li>
+<li> [spotipy](https://spotipy.readthedocs.io/en/2.22.0/)</li>
 </ul>
 
 ## Team Members
